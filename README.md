@@ -1,4 +1,4 @@
-# Hangman-Game
+# Hangman Game
 
 Terminal based game of hangman completely constructed using python as part of a mini-project for a computer science course.
 
