@@ -79,6 +79,6 @@ python hangman.py
   Play Again? (Y/N):
   ```
   
-## *Author Name*
+## *Author*
 
 [Tahzeer Ashraf](https://github.com/tahzeer)
