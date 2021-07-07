@@ -1,6 +1,6 @@
 # Hangman Game
 
-Terminal based game of hangman completely constructed using python as a mini-project.
+Terminal based game of hangman programmed in python for a mini-project.
 
 A random word is chosen from an editable external txt file containing words separated by newline character, and the player has to guess the word without making more than 6 mistakes as it would complete the hangman diagram.
 
