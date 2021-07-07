@@ -1,3 +1,4 @@
+# import libraries
 import random
 
 
@@ -5,15 +6,15 @@ import random
 def get_word():
 
     words = []
-    # create a list from the words in the file
+    
     with open('words.txt') as file:
         wordsList = list(file)
         for word in wordsList:
             words.append(word.rstrip("\n"))
-    # use the random module to choose a word
+    
     word = random.choice(words)
     word = word.upper()
-    # save the current word in a file
+    
     with open("current-word.txt", "w") as file:
         file.write(word)
 
@@ -23,14 +24,12 @@ def get_word():
 # function to play the game
 def play(word):
 
-    # intialise variable
-    # generate a line to show the number of word
     word_completion = "_" * len(word)
-    guessed = False  # indicate the status of guess
-    guessed_letters = []  # store guessed letters
-    guessed_words = []  # store guessed words
-    tries = 6  # user have 6 times of wrong
-    # display message and the format of the hangman
+    guessed = False
+    guessed_letters = []
+    guessed_words = []
+    tries = 6
+    
     print("Let's play Hangman!")
     print(display_hangman(tries))
     print(word_completion)
@@ -77,6 +76,7 @@ def play(word):
 
         # check the length of the user input and is it alpha or not
         elif len(guess) == len(word) and guess.isalpha():
+            
             # display message when user guess the same letter twice
             if guess in guessed_words:
                 print("You already guessed the word", guess)
@@ -106,13 +106,14 @@ def play(word):
     # if the variable of guess is true means user win the game
     if guessed:
         print("Congrats, you guessed the word! You win!")
-    # else means user lose the game.
+    
+    # else from the while loop means user lost the game
     else:
         print("Sorry, you ran out of tries. The word was " +
               word + ". Maybe next time!")
 
 
-# function to display the format of hangman
+# function to display the hangman
 def display_hangman(tries):
     stages = ["""
                     --------
@@ -190,5 +191,6 @@ def main():
         play(word)
 
 
+# check for implicit/explicit call
 if __name__ == "__main__":
     main()
