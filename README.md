@@ -6,7 +6,7 @@ A random word is chosen from an editable external txt file containing words sepa
 
 ## Setup
 Add all the files in a common directory and while still in the directory, run this command inside your terminal:
-```bash
+```
 python hangman.py
 ```
 
@@ -14,7 +14,7 @@ python hangman.py
 
 - Staring the game.
 
-  ```bash
+  ```
   Let's play Hangman!
 
                     --------       
@@ -36,7 +36,7 @@ python hangman.py
 
 - Loosing the game.
 
-  ```bash
+  ```
   I is not in the word.
 
                     --------
@@ -59,7 +59,7 @@ python hangman.py
   
 - Winning the game.
 
-  ```bash
+  ```
   
                     --------
                     |      |
