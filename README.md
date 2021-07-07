@@ -7,7 +7,7 @@ A random word is chosen from an editable external txt file containing words sepa
 ## Setup
 Add all the files in a common directory and while still in the directory, run this command inside your terminal:
 ```
-python hangman.py
+  python hangman.py
 ```
 
 ## Snippets
