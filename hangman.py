@@ -1,4 +1,3 @@
-# import libraries
 import random
 
 
@@ -6,15 +5,15 @@ import random
 def get_word():
 
     words = []
-    
+    # create a list from the words in the file
     with open('words.txt') as file:
         wordsList = list(file)
         for word in wordsList:
             words.append(word.rstrip("\n"))
-    
+    # use the random module to choose a word
     word = random.choice(words)
     word = word.upper()
-    
+    # save the current word in a file
     with open("current-word.txt", "w") as file:
         file.write(word)
 
@@ -24,17 +23,19 @@ def get_word():
 # function to play the game
 def play(word):
 
+    # intialise variable
+    # generate a line to show the number of word
     word_completion = "_" * len(word)
-    guessed = False
-    guessed_letters = []
-    guessed_words = []
-    tries = 6
-    
+    guessed = False         # status of the guess
+    guessed_letters = []    # store guessed letters
+    guessed_words = []      # store guessed words
+    tries = 6               # user have 6 times of wrong
+    # display message and the format of the hangman
     print("Let's play Hangman!")
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
-    print("Length of the word: ", len(word))
+    print(f"Length of the word: {len(word)}")
     print("\n")
 
     # user can keep guessing when the tries is more than 0 and the answer is not found yet.
@@ -48,17 +49,17 @@ def play(word):
 
             # display message when user guess the same letter twice
             if guess in guessed_letters:
-                print("You already guessed the letter", guess)
+                print(f"You already guessed the letter {guess}")
 
             # display message and deduct the tries when user guess the wrong letter
             elif guess not in word:
-                print(guess, "is not in the word.")
+                print(f"{guess} is not in the word.")
                 tries -= 1
                 guessed_letters.append(guess)
 
             # dispay message and store the letter when the user guess the correct letter
             else:
-                print("Good job,", guess, "is in the word!")
+                print(f"Good job, {guess} is in the word!")
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
 
@@ -76,14 +77,14 @@ def play(word):
 
         # check the length of the user input and is it alpha or not
         elif len(guess) == len(word) and guess.isalpha():
-            
+
             # display message when user guess the same letter twice
             if guess in guessed_words:
-                print("You already guessed the word", guess)
+                print(f"You already guessed the word {guess}")
 
             # display message and deduct the tries when user guess the wrong letter
             elif guess != word:
-                print(guess, "is not the word.")
+                print(f"{guess} is not the word.")
                 tries -= 1
                 guessed_words.append(guess)
 
@@ -100,20 +101,21 @@ def play(word):
         print(display_hangman(tries))
         print(word_completion)
         print("\n")
-        print("Length of the word: ", len(word))
+        print(f"Length of the word: {len(word)}")
         print("\n")
 
     # if the variable of guess is true means user win the game
     if guessed:
         print("Congrats, you guessed the word! You win!")
-    
-    # else from the while loop means user lost the game
+
+    # else means user lose the game.
     else:
         print("Sorry, you ran out of tries. The word was " +
               word + ". Maybe next time!")
 
 
-# function to display the hangman
+# function to display the format of hangman
+# using escape sequence for the backslash symbol
 def display_hangman(tries):
     stages = ["""
                     --------
@@ -191,6 +193,6 @@ def main():
         play(word)
 
 
-# check for implicit/explicit call
+# implicit-explicit calling
 if __name__ == "__main__":
     main()
