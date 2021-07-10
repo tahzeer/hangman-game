@@ -4,7 +4,13 @@ Terminal based game of hangman programmed in python for a mini-project.
 
 A random word is chosen from an editable external txt file containing words separated by newline character, and the player has to guess the word, either letter by letter or the entire word at once, without making more than 6 mistakes as it would complete the hangman diagram.
 
-## Setup
+## Requirements
+- `python 3.x`
+- `random` module
+```
+  pip install random
+```
+
 Add all the files in a common directory and while still in the directory, run this command inside your terminal:
 ```
   python hangman.py
