@@ -7,9 +7,6 @@ A random word is chosen from an editable external txt file containing words sepa
 ## Requirements
 - `python 3.x`
 - `random` module
-```
-  pip install random
-```
 
 Add all the files in a common directory and while still in the directory, run this command inside your terminal:
 ```
